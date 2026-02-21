@@ -1034,8 +1034,8 @@
             </div>
 
             <div class="project-tabs">
-                <button class="tab-btn active" onclick="switchTab('data-science')">Data Science</button>
-                <button class="tab-btn" onclick="switchTab('data-analysis')">Data Analysis</button>
+                <button class="tab-btn active" onclick="switchTab('data-science', this)">Data Science</button>
+                <button class="tab-btn" onclick="switchTab('data-analysis', this)">Data Analysis</button>
             </div>
 
             <!-- Data Science Projects -->
@@ -1333,11 +1333,11 @@
     </footer>
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        function switchTab(tabId) {
+        function switchTab(tabId, btn) {
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
             
-            event.target.classList.add('active');
+            btn.classList.add('active');
             document.getElementById(tabId).classList.add('active');
         }
 
